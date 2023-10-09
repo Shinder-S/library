@@ -1,5 +1,6 @@
 <?php
-require_once './app/controllers/homeController.php';
+require_once './app/controllers/generalController.php';
+require_once './app/controllers/authController.php';
 require_once './app/controllers/logInController.php';
 
 define('BASE_URL', '//' .$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
@@ -14,12 +15,12 @@ $params = explode('/', $action);
 
 switch ($params[0]){
     case 'home':
-        $controller = new HomeController();
-        $controller->showBooks();
+        $controller = new GeneralController();
+        $controller->showHome();
         break;
     case 'login':
-        $controller = new LogInController();
-        $controller->showLogIn();
+        $AuthController = new AuthController();
+        $AuthController->showLogin();
         break;
     default:
         echo "404 Page Not Found";
