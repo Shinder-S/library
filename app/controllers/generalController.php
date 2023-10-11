@@ -1,10 +1,11 @@
 <?php
-require_once './app/models/homeModel.php';
-require_once './app/views/homeView.php';
+require_once "./app/Controllers/checkController.php";
+require_once "./app/views/connectionView.php";
+
 
 class GeneralController extends CheckController{
-    private $model;
-    private $view;
+    
+   
 
 
     public function __construct(){
@@ -15,6 +16,10 @@ class GeneralController extends CheckController{
     function showHome(){
         $this->view->showHome();
     }
+
+  
+
+  
 
     function showDescription(){
         $this->view->showDescription();

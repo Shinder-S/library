@@ -1,19 +1,20 @@
 {include file="header.tpl"}
 
-<div class="mt-5 w-50 mx-auto login-wrapper">
+<div class="login-box"> 
+    <h1>Login Here</h1>
     <form action="validate" method="POST" class="form">
-        <h2>Login</h2>
-        <div class="input-group">
-            <input type="email" name="email" id="loginUser" required>
-            <label for="loginUser">Email</label>
-        </div>
-        <div class="input-group">
-            <input type="password" name="password" id="loginPassword" required>
-            <label for="loginPassword">Password</label>
-        </div>
-      
-        <input type="submit" value="Enter" class="submit-btn">
+        <label for="loginUser">Email</label>
+        <input type="email" required class="" id="loginUser" name="loginUser" placeholder="Enter Email">
+
+        <label for="loginPassword">Password</label>
+        <input type="password" required class="" id="loginPassword" name="loginPassword" placeholder="Enter Password">
+
+        <input type="submit" value="LOG IN" class="submit-btn" ></button>
+
+
     </form>
 </div>
+    
+ 
 
 {include file="footer.tpl"}

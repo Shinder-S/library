@@ -17,6 +17,8 @@ class ConnectionView{
         $this->smarty->display('home.tpl');
     }
 
+   
+
     public function showMessage($table, $id){
         $this->smarty->assign('table', $table);
         $this->smarty->assign('id', $id);

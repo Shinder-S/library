@@ -16,8 +16,14 @@ class AuthController{
     }
 
     function validationUser(){
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+        $email = $_POST['loginUser'];
+        $password = $_POST['loginPassword'];
+
+        if (empty($email)|| empty($password)) {
+            $this->view->showLogin('Faltan completar datos');
+            return;
+            # code...
+        }
 
         $user = $this->model->getEmailUser($email);
 

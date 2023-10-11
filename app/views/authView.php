@@ -1,5 +1,6 @@
 <?php
 require_once './libs/Smarty.class.php';
+require_once './app/views/connectionView.php';
 
 class AuthView extends ConnectionView{
     
