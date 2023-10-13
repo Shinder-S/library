@@ -2,7 +2,6 @@
 require_once "./app/Controllers/checkController.php";
 require_once "./app/models/bookModel.php";
 require_once "./app/views/bookView.php";
-
 class BookController extends CheckController{
     protected  $bookContentController;
 
@@ -24,6 +23,8 @@ class BookController extends CheckController{
         $book_category = $_POST['book_category'];
 
         $this->model->insertBook($book_name,$book_price,$book_category);
+        $this->view->editMessage($book_name);
+        
 
     }
     function showFormBook($param,$id=null){
@@ -31,6 +32,15 @@ class BookController extends CheckController{
         if(isset($id))
           $book = $this->model->getBookById($param, $id , $book);
           $this->view->showFormBook($param, $id, $book);
+    }
+    function editBook($book_id){
+        $this->checkLogIn();
+        $book_name = $_POST['book_name'];
+        $book_price = $_POST['book_price'];
+        $book_category = $_POST['book_category'];
+
+        $this->model->editBook($book_name,$book_price,$book_category,$book_id);
+        
     }
 
     

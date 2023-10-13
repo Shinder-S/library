@@ -45,6 +45,11 @@ switch ($params[0]){
                     $BookController = new BookController();
                     $BookController->addBook();
                     break;
+                case 'edit':    
+                    $BookController = new BookController();
+                    $BookController->editBook($params[2]);
+                    break;
+                    
                
 
             }

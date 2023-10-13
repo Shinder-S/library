@@ -25,9 +25,9 @@ class ConnectionView{
         $this->smarty->display('message.tpl');
     }
 
-    public function showEditMessage($name, $id=null){
-        $this->smarty->assign('name', $name);
-        $this->smarty->assign('id', $id);
+    public function editMessage($book_name, $book_id=null){
+        $this->smarty->assign('book_name', $book_name);
+        $this->smarty->assign('book_id', $book_id);
         $this->smarty->display('editMessage.tpl');
     }
 
