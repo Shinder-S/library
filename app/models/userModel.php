@@ -8,7 +8,7 @@ class UserModel extends PathModel{
 
     function getEmailUser($email){
         $sentence = $this->db->prepare("SELECT * FROM users WHERE user_mail = ?");
-        $sentence->execute(array($email));
+        $sentence->execute([$email]);
 
         return $sentence->fetch(PDO::FETCH_OBJ);
     }

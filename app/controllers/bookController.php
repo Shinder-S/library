@@ -17,6 +17,22 @@ class BookController extends CheckController{
         $this->view->showBooks($books);
     }
 
+    function addBook(){
+        $this->checkLogIn();
+        $book_name = $_POST['book_name'];
+        $book_price = $_POST['book_price'];
+        $book_category = $_POST['book_category'];
+
+        $this->model->insertBook($book_name,$book_price,$book_category);
+
+    }
+    function showFormBook($param,$id=null){
+        $book = null;
+        if(isset($id))
+          $book = $this->model->getBookById($param, $id , $book);
+          $this->view->showFormBook($param, $id, $book);
+    }
+
     
         
     

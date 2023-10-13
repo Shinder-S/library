@@ -13,5 +13,15 @@ class BookModel extends PathModel{
         $books = $query->fetchAll(PDO:: FETCH_OBJ);
         return $books;
     }
+    function getBookById($book_id){
+        $query = $this->db->prepare('SELECT * from books where book_id=?');
+        $query->execute([$book_id]);
+        $book= $query->fetch(PDO::FETCH_OBJ);
+        return $book;
+    }
+    function insertBook($book_name,$book_price,$book_category){
+        $query = $this->db->prepare("INSERT INTO books (book_name,book_price,book_category) VALUES (?,?,?)");
+        $query->execute(array($book_name,$book_price,$book_category));
+    }
    
 }

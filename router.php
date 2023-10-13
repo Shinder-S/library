@@ -34,6 +34,18 @@ switch ($params[0]){
     case 'books':
         if(isset($params[1])&&($params[1])){
             switch($params[1]){
+                case 'form':
+                    $BookController = new BookController();
+                    if(isset($params[3]))
+                        $BookController->showFormBook($params[2], $params[3]);
+                    else
+                        $BookController->showFormBook($params[2]);
+                    break;
+                case 'add':
+                    $BookController = new BookController();
+                    $BookController->addBook();
+                    break;
+               
 
             }
         }

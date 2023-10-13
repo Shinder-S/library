@@ -13,4 +13,13 @@ class BookView extends ConnectionView{
         $this->smarty->display('booksList.tpl');
 
     }
+
+    function showFormBook($param, $id , $book){
+        $this->smarty->assign('param', $param);
+        $this->smarty->assign('id', $id);
+        $this->smarty->assign('book', $book);
+        $this->smarty->display('bookForm.tpl');
+
+
+    }
 }
