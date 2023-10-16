@@ -49,6 +49,18 @@ switch ($params[0]){
                     $BookController = new BookController();
                     $BookController->editBook($params[2]);
                     break;
+                case 'confirm-delete':
+                    $controller = new GeneralController();
+                    $controller->showDelete($params[0],$params[2]);  
+                    break;  
+                case 'delete':
+                    $BookController = new BookController();
+                    $BookController->deleteBook($params[0],$params[2]);
+                    break;
+                default:
+                $controller = new GeneralController();
+                $controller->displayError();
+                break;        
                     
                
 
@@ -60,6 +72,7 @@ switch ($params[0]){
            break;  
 
         }
+        break;
               
     default:
         echo "404 Page Not Found";

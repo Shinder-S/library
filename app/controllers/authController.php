@@ -19,12 +19,6 @@ class AuthController{
         $email = $_POST['loginUser'];
         $password = $_POST['loginPassword'];
 
-        if (empty($email)|| empty($password)) {
-            $this->view->showLogin('Faltan completar datos');
-            return;
-            # code...
-        }
-
         $user = $this->model->getEmailUser($email);
 
         if($user && password_verify($password, $user->user_password)){
@@ -42,6 +36,6 @@ class AuthController{
     function logout(){
         session_start();
         session_destroy();
-        header("Location: " . BASE_URL . "login");
+        header("Location: " . BASE_URL);
     }
 }

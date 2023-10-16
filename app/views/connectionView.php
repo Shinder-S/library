@@ -19,10 +19,10 @@ class ConnectionView{
 
    
 
-    public function showMessage($table, $id){
+    public function showMessage($table, $book_id){
         $this->smarty->assign('table', $table);
-        $this->smarty->assign('id', $id);
-        $this->smarty->display('message.tpl');
+        $this->smarty->assign('book_id', $book_id);
+        $this->smarty->display('messageDelete.tpl');
     }
 
     public function editMessage($book_name, $book_id=null){
@@ -31,9 +31,9 @@ class ConnectionView{
         $this->smarty->display('editMessage.tpl');
     }
 
-    public function showDelete($param, $id){
+    public function showDelete($param, $book_id){
         $this->smarty->assign('param', $param);
-        $this->smarty->assign('id', $id);
+        $this->smarty->assign('book_id', $book_id);
         $this->smarty->display('delete.tpl');
     }
 

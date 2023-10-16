@@ -29,9 +29,9 @@ class GeneralController extends CheckController{
         $this->view->showError();
     }
 
-    function showDelete($item, $id){
+    function showDelete($item, $book_id){
         $this->checkLogIn();
-        $this->view->showDelete($item, $id);
+        $this->view->showDelete($item, $book_id);
     }
 
 }

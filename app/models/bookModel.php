@@ -24,8 +24,13 @@ class BookModel extends PathModel{
         $query->execute(array($book_name,$book_price,$book_category));
     }
     function editBook($book_id,$book_name,$book_price,$book_category){
-        $query = $this->db->prepare("UPDATE books SET book_name = ?, book_price = ?, book_category = ? WHERE book_id = ?");
-        $query->execute(array($book_name, $book_price,$book_category,$book_id));
+        $query = $this->db->prepare("UPDATE `books` SET `book_name` = ?, `book_price` = ?, `book_category` = ? WHERE `books` . `book_id` = ?;");
+        $query->execute([$book_name, $book_price, $book_category, $book_id]);
+    }
+    function deleteBookById($book_id){
+        $query = $this->db->prepare("DELETE FROM books WHERE book_id = ?");
+        $query->execute(array($book_id));
+
     }
    
 }

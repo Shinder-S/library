@@ -40,7 +40,13 @@ class BookController extends CheckController{
         $book_category = $_POST['book_category'];
 
         $this->model->editBook($book_name,$book_price,$book_category,$book_id);
+        $this->view->editMessage($book_name,$book_id);
         
+    }
+    function deleteBook($table,$book_id){
+        $this->checkLogIn();
+        $this->model->deleteBookById($book_id);
+        $this->view->showMessage($table,$book_id);
     }
 
     

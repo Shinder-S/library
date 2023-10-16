@@ -10,21 +10,16 @@
     </thead>
     <tbody>
         {foreach from=$books item=$book}
-          
-          
-          
           <tr>
-           <!-- Muestra el ID del libro en una celda oculta -->
             <td>{$book->book_name}</td>
             <td>{$book->book_price}</td>
             <td>{$book->book_category}</td>
-                <td class="d-flex p-2">
-               <a href='edit' type="button" class="btn btn-succes me-1"><img src="./assets/imgs/edit.png" width="25" height="25"></a>
-                    <a href="Book/form/delete" type="button" class="btn btn-succes me-1"><img src="./assets/imgs/delete.png" width="25" height="25"></a>
-                </td>
-           
-
-            
+            {if $_SESSION['IS_LOGGED'] = true}
+            <td class="d-flex p-2">
+              <a href='books/form/edit/{$book->book_id}' type="button" class="btn btn-succes me-1"><img src="./assets/imgs/edit.png" width="25" height="25"></a>
+              <a href="books/confirm-delete/{$book->book_id}" type="button" class="btn btn-succes me-1"><img src="./assets/imgs/delete.png" width="25" height="25"></a>
+            </td>
+          {/if}
           </tr>
         {/foreach}
     </tbody>
