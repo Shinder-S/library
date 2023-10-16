@@ -11,10 +11,10 @@
     <tbody>
         {foreach from=$books item=$book}
           <tr>
-            <td>{$book->book_name}</td>
+            <td><a href="books/viewBook/{$book->book_id}">{$book->book_name} </a></td>
             <td>{$book->book_price}</td>
             <td>{$book->book_category}</td>
-            {if $_SESSION['IS_LOGGED'] = true}
+            {if isset ($smarty.session.IS_LOGGED)&&($smarty.session.IS_LOGGED)}
             <td class="d-flex p-2">
               <a href='books/form/edit/{$book->book_id}' type="button" class="btn btn-succes me-1"><img src="./assets/imgs/edit.png" width="25" height="25"></a>
               <a href="books/confirm-delete/{$book->book_id}" type="button" class="btn btn-succes me-1"><img src="./assets/imgs/delete.png" width="25" height="25"></a>

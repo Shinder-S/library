@@ -40,4 +40,8 @@ class ConnectionView{
     public function showDescription(){
         $this->smarty->display('drinkDescription.tpl');
     }
+    public function viewBook($book){
+        $this->smarty->assign('book', $book);
+        $this->smarty->display('lookBook.tpl');
+    }
 }

@@ -57,6 +57,10 @@ switch ($params[0]){
                     $BookController = new BookController();
                     $BookController->deleteBook($params[0],$params[2]);
                     break;
+                case 'viewBook':
+                    $BookController = new BookController();
+                    $BookController->viewBook($params[1]);
+                    break;    
                 default:
                 $controller = new GeneralController();
                 $controller->displayError();

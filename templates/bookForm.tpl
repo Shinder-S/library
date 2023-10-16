@@ -5,11 +5,11 @@
         <div class="col-9">
             <div class="form-group">
                 <label>Name</label>
-                <input name="book_name" {if isset($book_id)}value="{$book[0]->book_name}"{/if} type="text" class="form-control w-50" required>
+                <input name="book_name" {if isset($book_id)}value="{$book->book_name}"{/if} type="text" class="form-control w-50" required>
                 <label>Price</label>
-                <input name="book_price" {if isset($book_id)}value="{$book[1]->book_price}"{/if} type="number" class="form-control w-50" required>
+                <input name="book_price" {if isset($book_id)}value="{$book->book_price}"{/if} type="number" class="form-control w-50" required>
                 <label>Category</label>
-                <input name="book_category" {if isset($book_id)}value="{$book[2]->book_category}"{/if} type="text" class="form-control w-50" required>    
+                <input name="book_category" {if isset($book_id)}value="{$book->book_category}"{/if} type="text" class="form-control w-50" required>    
             </div>
         </div>
     <button type="submit" class="btn btn-primary mt-2 w-25">Save</button>

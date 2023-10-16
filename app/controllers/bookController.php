@@ -48,6 +48,10 @@ class BookController extends CheckController{
         $this->model->deleteBookById($book_id);
         $this->view->showMessage($table,$book_id);
     }
+     function viewBook($book_id){
+        $book = $this->model->getBookById($book_id);
+        $this->view->viewBook($book);
+     }
 
     
         
