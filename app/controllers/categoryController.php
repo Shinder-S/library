@@ -4,18 +4,18 @@ require_once "./app/Models/categoryModel.php";
 require_once "./app/Views/categoryView.php";
 
 class CategoryController extends CheckController{
-    private $alcoholContentModel;
+    private $categoryModel;
 
     function __construct(){
         parent::__construct();
         $this->view = new CategoryView;
         $this->model = new CategoryModel;
-        //$this->alcoholContentModel = new AlcoholContentModel;
+        $this->categoryModel = new CategoryModel;
     }
     
     function showCategories($name = null){
     if(isset($name))
-        $categories = $this->model->getCategoriesByAlcoholContent($name);
+        $categories = $this->model->getCategoriesByCategory($name);
     else
         $categories = $this->model->getAllCategories();
     $this->view->showCategories($categories);
@@ -23,12 +23,12 @@ class CategoryController extends CheckController{
 
     function showFormCategory($param, $id = null){
         $this->checkLogIn();
-        $alcohol_contents = $this->alcoholContentModel->getAlcoholContentsNames();
+        $category = $this->categoryModel->getCategoriesNames();
         $category = null;
         if(isset($id))
             $category = $this->model->getCategory($id);
 
-        $this->view->showFormCategory($param, $id, $alcohol_contents, $category);
+        $this->view->showFormCategory($param, $id, $category);
     }
 
     function addCategory(){
@@ -36,14 +36,13 @@ class CategoryController extends CheckController{
         $name = $_POST['name'];
         $brand = $_POST['brand'];
         $id_category = $_POST['id_category'];
-        $id_alcohol_content = $_POST['id_alcohol_content'];
 
-        $this->model->insertCategory($name, $brand, $id_category, $id_alcohol_content);
+        $this->model->insertCategory($name, $brand, $id_category);
         
         $this->view->showMessage($name);
     }
 
-    function editCategory($id){
+    function editCategory($id_category){
         $this->checkLogIn();
         $name = $_POST['name'];
         $amount = $_POST['amount'];
@@ -58,6 +57,5 @@ class CategoryController extends CheckController{
         $this->model->deleteCategoryById($id);
         $this->view->showMessage($table, $id);
     }
-
 
 }

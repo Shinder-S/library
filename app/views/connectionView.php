@@ -17,31 +17,25 @@ class ConnectionView{
         $this->smarty->display('home.tpl');
     }
 
-   
-
-    public function showMessage($table, $book_id){
+    public function showMessage($table, $id){
         $this->smarty->assign('table', $table);
-        $this->smarty->assign('book_id', $book_id);
-        $this->smarty->display('messageDelete.tpl');
+        $this->smarty->assign('id', $id);
+        $this->smarty->display('message.tpl');
     }
 
-    public function editMessage($book_name, $book_id=null){
-        $this->smarty->assign('book_name', $book_name);
-        $this->smarty->assign('book_id', $book_id);
+    public function showEditMessage($name, $id=null){
+        $this->smarty->assign('name', $name);
+        $this->smarty->assign('id', $id);
         $this->smarty->display('editMessage.tpl');
     }
 
-    public function showDelete($param, $book_id){
+    public function showDelete($param, $id){
         $this->smarty->assign('param', $param);
-        $this->smarty->assign('book_id', $book_id);
+        $this->smarty->assign('id', $id);
         $this->smarty->display('delete.tpl');
     }
 
     public function showDescription(){
-        $this->smarty->display('drinkDescription.tpl');
-    }
-    public function viewBook($book){
-        $this->smarty->assign('book', $book);
-        $this->smarty->display('lookBook.tpl');
+        $this->smarty->display('bookDescription.tpl');
     }
 }

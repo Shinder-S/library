@@ -1,4 +1,4 @@
-{include file="header.tpl"}
+{include file="templates/header.tpl"}
 
 <div class="login-box"> 
     <h1>Login Here</h1>
@@ -17,4 +17,4 @@
     
  
 
-{include file="footer.tpl"}
+{include file="templates/footer.tpl"}

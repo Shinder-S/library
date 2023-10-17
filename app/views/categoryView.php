@@ -13,11 +13,6 @@ class CategoryView extends ConnectionView{
         $this->smarty->display('category.tpl');
     }
 
-    function showImgError($img = null){
-        $this->smarty->assign('image', $img); 
-        $this->smarty->display('denied.tpl');
-    }
-
     function showCategories($categories){
         $this->smarty->assign('count', count($categories));
         $this->smarty->assign('categories', $categories);    

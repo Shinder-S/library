@@ -25,7 +25,7 @@ class CategoryModel extends PathModel{
         $query->execute([$name, $category, $id_book, $id]);
     }
     
-    function getAllAlcoholContent(){
+    function getAllCategories(){
         $query = $this->db->prepare("SELECT FROM category ORDER BY name");
         $query->execute();
 

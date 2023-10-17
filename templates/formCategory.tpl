@@ -10,10 +10,6 @@
                 <input name="amount" {if isset($id)}value="{$category[0]->amount}"{/if} type="number" class="form-control w-50" required>
             </div>
         </div>
-        <div class="form-group">
-            <label>Drop your photo</label>
-            <input type="file" name="photo" id="imageToUpload">
-        </div>
     <button type="submit" class="btn btn-primary mt-2 w-25">Save</button>
 </form>
 <button type="submit" class="btn btn-primary ms-2 mt-2 w-25 back-list">Back</button>

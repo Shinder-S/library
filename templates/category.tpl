@@ -1,7 +1,6 @@
-{include file="header.tpl"}
+{include file="templates/header.tpl"}
 
   <div class="card">
-    <img id="category" src="{$category[0]->photo}" class="rounded mx-auto d-block" {*class="card-img-top"*} alt="{$category[0]->name}">
   
     <div class="text-center" class="card-body">
       <h5 class="card-title">{$category[0]->name}</h5>
@@ -15,4 +14,4 @@
     </div>
   </div>
 
-{include file="footer.tpl"}
+{include file="templates/footer.tpl"}

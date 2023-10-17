@@ -5,9 +5,6 @@ require_once "./app/views/connectionView.php";
 
 class GeneralController extends CheckController{
     
-   
-
-
     public function __construct(){
         parent::__construct();
         $this->view = new ConnectionView();
@@ -16,10 +13,6 @@ class GeneralController extends CheckController{
     function showHome(){
         $this->view->showHome();
     }
-
-  
-
-  
 
     function showDescription(){
         $this->view->showDescription();
